@@ -6,15 +6,16 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 14:28:24 by alienard          #+#    #+#             */
-/*   Updated: 2020/09/24 15:03:08 by alienard         ###   ########.fr       */
+/*   Updated: 2020/09/25 10:25:45 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <algorithm>
+using namespace std;
 
 int	main(int ac, char **av)
 {
@@ -37,9 +38,10 @@ int	main(int ac, char **av)
 	i = 1;
 	while (av[i])
 	{
-		write(1, av[i], strlen(av[i]));
+		cout << av[i];
+		cout << " ";
 		i++;
 	}
-	write(1, "\n", 1);
+	cout << "\n";
 	return (0);
 }
