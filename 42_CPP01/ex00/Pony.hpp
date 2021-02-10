@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 10:40:25 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/10 15:50:02 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:36:29 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Pony
 		std::string	_allocation;
 
 	public:
-		
 		Pony( std::string p1, std::string	p2, int p3, std::string p4 );
 		~Pony();
 };
