@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 17:10:57 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/10 17:24:53 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/10 17:27:34 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ Zombie::Zombie( void ){
 }
 
 Zombie::~Zombie( void ){
-
+	
 }

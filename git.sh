@@ -1,3 +1,5 @@
+
+COMMIT=$1
 git add -u .
-git commit -m '$1'
+git commit -m "$COMMIT"
 git push
