@@ -2,13 +2,17 @@ NAME = phonebook
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = /
 
 SRC = phonebook \
 		Contact_Class \
 		PhoneBook_Class \
+
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
 
 FIL = $(addsuffix .cpp, $(addprefix , $(SRC)))
 

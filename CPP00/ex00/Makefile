@@ -2,9 +2,14 @@ NAME = megaphone
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = megaphone
+HEADER = /
+
+SRC = megaphone \
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
 
 FIL = $(addsuffix .cpp, $(addprefix , $(SRC)))
 
@@ -12,7 +17,7 @@ OBJ = $(FIL:.cpp=.o)
 
 BIN = $(addsuffix .o, $(SRC))
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re
 
 all: $(NAME)
 

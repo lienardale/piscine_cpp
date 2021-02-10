@@ -72,8 +72,8 @@ void	ft_display_search_preview(PhoneBook_Class *book)
 
 void	ft_display_search_result(PhoneBook_Class *book)
 {
-	int			contact_index;
-	int			i;
+	int				contact_index;
+	unsigned long	i;
 	std::string	tmp;
 	while (1)
 	{
@@ -89,8 +89,8 @@ void	ft_display_search_result(PhoneBook_Class *book)
 				break ;
 			}
 		}
-		if (i == book->get_input().size() && i != 0)
-			contact_index = std::stoi(book->get_input());
+		if (i == book->get_input().size() && i == 1)
+			contact_index = book->get_input()[0] - 48;
 		if (i == 0 || contact_index < 0 || contact_index >= book->getNbContacts())
 			std::cout << "No contact for this id." << std::endl;
 		else
