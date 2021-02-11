@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 17:11:31 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/11 12:50:08 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/11 15:45:12 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ Zombie	*ZombieEvent::newZombie ( std::string name ){
 	tmp = new Zombie;
 	tmp->set_name(name);
 	tmp->set_type( _set_type );
-	// announce(tmp);
 	return (tmp);
 }
 
@@ -38,13 +37,7 @@ void ZombieEvent::randomChump( void ){
 	tmp.set_name( random_names[rand() % 10] );
 	tmp.set_type( this->getZombieType() );
 	tmp.announce();
-	// announce(&tmp);
 }
-
-// void	ZombieEvent::announce(Zombie * newZombie){
-// 	newZombie->announce();
-// 	// std::cout << "Zombie called " << newZombie->get_name() << " of type " << newZombie->get_type()  << " is announcing itself." << std::endl;
-// }
 
 ZombieEvent::ZombieEvent( void ){
 	return ;

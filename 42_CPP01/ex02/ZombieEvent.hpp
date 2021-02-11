@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 17:11:29 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/11 12:50:12 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/11 15:45:17 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class ZombieEvent
 		std::string	getZombieType( void );
 		Zombie		*newZombie( std::string name );
 		void		randomChump( void );
-		// void 		announce( Zombie * newZombie );
 		ZombieEvent();
 		~ZombieEvent();
 };
