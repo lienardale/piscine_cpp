@@ -6,27 +6,25 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 17:11:29 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/10 17:22:14 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/11 12:50:12 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIEEVENT_HPP
 # define ZOMBIEEVENT_HPP
 
-# include <iostream>
-# include <iomanip>
-# include <string>
+# include "Zombie.hpp"
 
 class ZombieEvent
 {
 	private:
-		// std::string	_name;
-		// std::string	_color;
-		// int			_age;
-		// std::string	_allocation;
-
+		std::string	_set_type;
 	public:
-		void setZombieType( void );
+		void		setZombieType( std::string type );
+		std::string	getZombieType( void );
+		Zombie		*newZombie( std::string name );
+		void		randomChump( void );
+		// void 		announce( Zombie * newZombie );
 		ZombieEvent();
 		~ZombieEvent();
 };

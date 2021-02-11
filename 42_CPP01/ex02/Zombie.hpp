@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 17:10:52 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/10 17:22:02 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/11 12:06:43 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ class Zombie
 	private:
 		std::string	_name;
 		std::string	_type;
-		// int			_age;
-		// std::string	_allocation;
 
 	public:
-		void advert( void );
+		void announce( void );
+		void set_name( std::string name );
+		void set_type( std::string type );
+		std::string	get_name( void );
+		std::string	get_type( void );
 		Zombie();
 		~Zombie();
 };
