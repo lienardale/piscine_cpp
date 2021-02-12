@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 17:10:57 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/11 12:49:07 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/12 16:08:23 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ std::string	Zombie::get_type( void ){
 }
 
 void	Zombie::announce( void ){
-	// std::cout << this->_name << " " << this->_type << " " << "Braiiiiiiinnnssss ..." << std::endl;
 	std::cout << "Zombie called " << this->_name << " of type " << this->_type  << " is announcing itself : Braiiiiiiinnnssss ..." << std::endl;
 	return ;
 }
