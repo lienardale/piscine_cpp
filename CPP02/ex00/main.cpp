@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 10:40:25 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/10 16:36:29 by alienard         ###   ########.fr       */
+/*   Created: 2021/02/16 09:49:05 by alienard          #+#    #+#             */
+/*   Updated: 2021/02/16 09:52:55 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#include "Fixed.hpp"
 
-# include <iostream>
-# include <iomanip>
-# include <string>
-
-class Pony
-{
-	private:
-		std::string	_name;
-		std::string	_color;
-		int			_age;
-		std::string	_allocation;
-
-	public:
-		Pony( std::string p1, std::string	p2, int p3, std::string p4 );
-		~Pony();
-};
-
-#endif
+int main( void ) {
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
+}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/15 16:46:50 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/16 09:58:26 by alienard         ###   ########.fr       */
+/*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
+/*   Updated: 2021/02/16 12:23:08 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,25 @@
 // # define PRINT 0
 // #endif
 
-class Fixed
+class FragTrap
 {
 		private:
-			int					_value;
-			static const int	_store = 8;
+			int			_hit_points;
+			int			_max_hit_points;
+			int			_energy_points;
+			int			_max_energy_points;
+			int			_level;
+			std::string	_name;
+			int			_melee_attak_damage;
+			int			_range_attack_damage;
+			int			_armor_damage_reduction;
 		public:
-			Fixed();
-			Fixed(const Fixed&);
-			~Fixed();
-			Fixed&	operator=(const Fixed&);
-			int		getRawBits( void ) const;
-			void	setRawBits( int const raw );
+			FragTrap(std::string name);
+			FragTrap(const FragTrap&);
+			~FragTrap();
+			FragTrap&	operator=(const FragTrap&);
+			void	rangedAttack(std::string const & target);
+			void	meleeAttack(std::string const & target);
+			void	takeDamage(unsigned int amount);
+			void	beRepaired(unsigned int amount);
 };

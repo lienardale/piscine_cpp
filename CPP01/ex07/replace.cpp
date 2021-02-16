@@ -20,10 +20,8 @@ void	replace(std::ifstream &old_file, std::string name, std::string old_s, std::
 	std::string		tmp;
 	std::size_t		pos;
 	std::size_t		i;
-	std::string		new_file_name;
 
-	new_file_name = name + ".replace";
-	new_file.open(new_file_name.c_str(), std::ofstream::trunc);
+	new_file.open(name + ".replace", std::ofstream::trunc);
 	while (std::getline(old_file, tmp))
 	{
 		i = 0;
@@ -56,22 +54,21 @@ int	main(int ac, char **av)
 	std::string s2;
 
 	if ( ac != 4 ){
-		std::cerr << "Error : Wrong arg nb." << std::endl;
+		std::cout << "Wrong arg nb, gtfo" << std::endl;
 		return 1;
 	}
 	filename.open ( av[1] );
 	if (!(filename.is_open())){
-		std::cerr << "Error : File must exist in order to open it." << std::endl;
+		std::cout << "File must exist in order to open it, gtfo" << std::endl;
 		return 1;
 	}
 	s1 = av[2];
 	s2 = av[3];
 	if (s1.length() <= 0 || s2.length() <= 0){
-		std::cerr << "Error : Replacement strings must not be empty." << std::endl;
+		std::cout << "Replacement strings must not be empty, gtfo" << std::endl;
 		return 1;
 	}
 	replace(filename, av[1], s1, s2);
 	filename.close();
 	return 0;
 }
-

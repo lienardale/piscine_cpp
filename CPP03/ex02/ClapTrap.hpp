@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 10:40:25 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/10 16:36:29 by alienard         ###   ########.fr       */
+/*   Created: 2021/02/16 12:13:57 by alienard          #+#    #+#             */
+/*   Updated: 2021/02/16 12:13:57 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#pragma once
+#include <iostream>
+#include <string>
 
-# include <iostream>
-# include <iomanip>
-# include <string>
-
-class Pony
-{
-	private:
-		std::string	_name;
-		std::string	_color;
-		int			_age;
-		std::string	_allocation;
-
-	public:
-		Pony( std::string p1, std::string	p2, int p3, std::string p4 );
-		~Pony();
-};
-
+#ifdef DEBUG
+# define PRINT 1
+#else
+# define PRINT 0
 #endif
+
+class ClapTrap
+{
+		private:
+
+		public:
+			ClapTrap();
+			ClapTrap(const ClapTrap&);
+			~ClapTrap();
+			ClapTrap&	operator=(const ClapTrap&);
+};

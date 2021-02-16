@@ -1,53 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/15 16:46:50 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/16 10:00:50 by alienard         ###   ########.fr       */
+/*   Created: 2021/02/16 12:13:33 by alienard          #+#    #+#             */
+/*   Updated: 2021/02/16 12:13:33 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
 
-Fixed::Fixed()
+ScavTrap::ScavTrap()
 {
 	if (PRINT)
-		std::cout << "Default constructor called" << std::endl;
-	this->_value = 0;
+		std::cout << "Constructor called" << std::endl;
+
 }
 
-Fixed::~Fixed()
+ScavTrap::~ScavTrap()
 {
 	if (PRINT)
 		std::cout << "Destructor called" << std::endl;
+
 }
 
-Fixed::Fixed(const Fixed& obj)
+ScavTrap::ScavTrap(const ScavTrap& obj)
 {
 	if (PRINT)
-		std::cout << "Copy constructor called" << std::endl;
+		std::cout << "Copy Constructor called" << std::endl;
 	*this = obj;
 }
 
-Fixed&	Fixed::operator=(const Fixed& obj)
+ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 {
 	if (PRINT)
 		std::cout << "Assignation operator called" << std::endl;
-	this->_value = obj.getRawBits();
 	return *this;
 }
 
-int		Fixed::getRawBits( void ) const{
-	if (PRINT)
-		std::cout << "getRawBits member function called" << std::endl;
-	return this->_value;
-}
-
-void	Fixed::setRawBits( int const raw ){
-	if (PRINT)
-		std::cout << "setRawBits member function called" << std::endl;
-	this->_value = raw;
-}
