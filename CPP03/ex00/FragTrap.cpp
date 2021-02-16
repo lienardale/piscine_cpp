@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/16 12:26:36 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/16 16:26:10 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 FragTrap::FragTrap(std::string name):_name(name)
 {
 	if (PRINT)
-		std::cout << "Constructor called" << std::endl;
+		std::cout << "CL4P-TP Constructor called" << std::endl << "CL4P-TP : Euh, qui ça ? Moi Monsieur ?" << std::endl;
 	this->_hit_points = 100;
 	this->_max_hit_points = 100;
 	this->_energy_points = 100;
@@ -29,7 +29,7 @@ FragTrap::FragTrap(std::string name):_name(name)
 FragTrap::~FragTrap()
 {
 	if (PRINT)
-		std::cout << "Destructor called" << std::endl;
+		std::cout << "CL4P-TP Destructor called" << std::endl << "CL4P-TP : Passez un bon après-midi. Et merci d'utiliser les services robotiques d'Hyperion. N'hésitez pas à faire appel à moi en cas de portes." << std::endl;
 
 }
 
