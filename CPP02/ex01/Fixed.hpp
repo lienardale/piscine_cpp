@@ -6,12 +6,13 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 16:46:50 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/16 10:37:30 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/17 10:18:03 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <cmath>
 

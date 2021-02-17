@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 09:49:05 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/16 10:38:58 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/17 10:20:15 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,9 @@ int main( void ) {
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+	a = Fixed( 4.43232543543511f );
+	std::cout << std::setprecision(20) <<"a is " << a << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	return 0;
 }
