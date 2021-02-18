@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/17 16:42:00 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:24:30 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,12 @@ class FragTrap
 			FragTrap(const FragTrap&);
 			~FragTrap();
 			FragTrap&	operator=(const FragTrap&);
-			int		rangedAttack(std::string const & target);
-			int		meleeAttack(std::string const & target);
+			unsigned int		rangedAttack(std::string const & target);
+			unsigned int		meleeAttack(std::string const & target);
 			void	takeDamage(unsigned int amount);
 			void	beRepaired(unsigned int amount);
-			int		vaulthunter_dot_exe(std::string const & target);
+			unsigned int		vaulthunter_dot_exe(std::string const & target);
+			int		get_hit_points(void);
+			void	set_hit_points(int hp);
+			std::string		get_name(void);
 };
