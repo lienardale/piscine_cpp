@@ -6,13 +6,13 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:54 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/18 10:22:12 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/18 12:22:27 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "FragTrap.hpp"
-
+#include "ScavTrap.hpp"
 
 void	fight_simulation(FragTrap four, FragTrap five)
 {
@@ -68,6 +68,23 @@ int main()
 
 
 	fight_simulation(four, five);
+	std::cout << std::endl;
 
+	ScavTrap	Linette_Scav0("Linette_Scav0");
+	Linette_Scav0.meleeAttack("Oponent one");
+	Linette_Scav0.rangedAttack("Oponent one");
+	Linette_Scav0.takeDamage(50);
+	Linette_Scav0.takeDamage(50);
+	Linette_Scav0.takeDamage(50);
+	Linette_Scav0.beRepaired(500);
+
+	ScavTrap	Tom_Scav0("Tom_Scav0");
+	Tom_Scav0.challengeNewcomer("Doctor Strange");
+	Tom_Scav0.challengeNewcomer("Doctor House");
+	Tom_Scav0.challengeNewcomer("Doctor Jekyll");
+	Tom_Scav0.challengeNewcomer("Doctor Love");
+	Tom_Scav0.challengeNewcomer("Doctor Frankenstein");
+	
+	std::cout << std::endl;
 	return 0;
 }
