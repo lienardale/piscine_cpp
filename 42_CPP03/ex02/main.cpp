@@ -6,11 +6,12 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:54 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/18 12:22:27 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/18 17:16:10 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
@@ -85,6 +86,9 @@ int main()
 	Tom_Scav0.challengeNewcomer("Doctor Love");
 	Tom_Scav0.challengeNewcomer("Doctor Frankenstein");
 	
+
+	ClapTrap	CT(500, 500, 500, 500, 5, "Relou_en_chef", 100, 100, 20, "CL4P_TP");
+
 	std::cout << std::endl;
 	return 0;
 }
