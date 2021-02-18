@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/17 17:10:35 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:32:14 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ FragTrap::FragTrap(std::string name): _hit_points(100), _max_hit_points(100), _e
 
 FragTrap::~FragTrap()
 {
-	if (PRINT)
-		std::cout << "CL4P-TP Destructor called" << std::endl << "CL4P-TP : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa." << std::endl;
+	// if (PRINT)
+		// std::cout << "CL4P-TP Destructor called" << std::endl << "CL4P-TP : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa." << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& obj)
@@ -52,25 +52,32 @@ FragTrap&	FragTrap::operator=(const FragTrap& obj)
 	return *this;
 }
 
-int			FragTrap::rangedAttack(std::string const & target){
+unsigned int			FragTrap::rangedAttack(std::string const & target){
 	if (this->_energy_points > 0){
-		std::cout << "FR4G-TP "<< this->_name << " attacks " << target << " at range, causing " << this->_range_attack_damage << " points of damage!" << std::endl;
+		std::cout << "FR4G-TP "<< this->_name << " attacks " << target << " at range, causing " << this->_range_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
 		return (this->_range_attack_damage);
 	}
 	return 0;
 }
 
-int			FragTrap::meleeAttack(std::string const & target){
+unsigned int			FragTrap::meleeAttack(std::string const & target){
 	if (this->_energy_points >= 0){
-		std::cout << "FR4G-TP "<< this->_name << " attacks " << target << " in melee, causing " << this->_melee_attack_damage << " points of damage!" << std::endl;
+		std::cout << "FR4G-TP "<< this->_name << " attacks " << target << " in melee, causing " << this->_melee_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
 		return (this->_melee_attack_damage);
 	}
 	return 0;
 }
 
 void	FragTrap::takeDamage(unsigned int amount){
-	std::cout << "FR4G-TP "<< this->_name << " takes " << amount - this->_armor_damage_reduction << " damage points." << std::endl;
-	this->_hit_points -= amount - this->_armor_damage_reduction;
+	unsigned int armor;
+
+	armor = (unsigned int)this->_armor_damage_reduction;
+	if (amount == 0 || armor >= amount)
+		std::cout << "FR4G-TP "<< this->_name << " takes 0 damage points." << std::endl;
+	else
+		std::cout << "FR4G-TP "<< this->_name << " takes " << amount - this->_armor_damage_reduction << " damage points." << std::endl;
+	if (amount > 0)
+		this->_hit_points -= amount - this->_armor_damage_reduction;
 	if ( this->_hit_points <= 0 ){
 		this->_hit_points = 0;
 		std::cout << "FR4G-TP "<< this->_name << " is dead." << std::endl;
@@ -87,9 +94,9 @@ void	FragTrap::beRepaired(unsigned int amount){
 	std::cout << " " << this->_hit_points << " HP left." << std::endl;
 }
 
-int		FragTrap::vaulthunter_dot_exe(std::string const & target){
+unsigned int		FragTrap::vaulthunter_dot_exe(std::string const & target){
 	int			attack_nb = rand() % 5;
-	int			dmg;
+	unsigned int			dmg;
 	std::string	attack;
 	
 	if (this->_hit_points <= 0)
@@ -125,8 +132,21 @@ int		FragTrap::vaulthunter_dot_exe(std::string const & target){
 			attack = "laser beam shot";
 			break;
 		}
-		std::cout << "FR4G-TP " << this->_name << " attacks : " << attack << ", it causes " << dmg << " dmg points to " << target << std::endl;
+		std::cout << "FR4G-TP " << this->_name << " attacks : " << attack << ", it causes " << dmg << " dmg points to " << target << " (without armor reduction)." << std::endl;
 		return dmg;
 	}
 	return 0;
+}
+
+int		FragTrap::get_hit_points(void){
+	return this->_hit_points;
+}
+
+void		FragTrap::set_hit_points(int hp){
+	this->_hit_points = hp;
+	return ;
+}
+
+std::string		FragTrap::get_name(void){
+	return this->_name;
 }
