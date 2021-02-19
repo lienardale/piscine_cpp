@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:13 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 15:47:28 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:10:12 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,33 @@
 NinjaTrap::NinjaTrap(): ClapTrap(60, 60, 120, 120, 1, "Unknown", 60, 5, 0, "N1NJ4-TP")
 {
 	if (PRINT)
-		std::cout << "N1NJ4-TP Default Constructor called. " << this->_type << " " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "N1NJ4-TP Default Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 
 }
 
 NinjaTrap::NinjaTrap(std::string name): ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0, "N1NJ4-TP")
 {
 	if (PRINT)
-		std::cout << "N1NJ4-TP Constructor called. " << this->_type << " " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "N1NJ4-TP Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 }
 
 NinjaTrap::~NinjaTrap()
 {
 	if (PRINT)
-		std::cout << "N1NJ4-TP Destructor called. " << this->_type << " " << this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;
+		std::cout << "N1NJ4-TP Destructor called. " << this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;
 }
 
 NinjaTrap::NinjaTrap(const NinjaTrap& obj)
 {
 	if (PRINT)
-		std::cout << "N1NJ4-TP Copy Constructor called. " << this->_type << " " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "N1NJ4-TP Copy Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 	*this = obj;
 }
 
 NinjaTrap&	NinjaTrap::operator=(const NinjaTrap& obj)
 {
 	if (PRINT)
-		std::cout << "N1NJ4-TP Assignation Operator called. " << this->_type << " " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "N1NJ4-TP Assignation Operator called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 	ClapTrap::operator=(obj);
 	return *this;
 }
@@ -84,7 +84,6 @@ unsigned int		NinjaTrap::ninjaShoebox(FragTrap& obj){
 unsigned int		NinjaTrap::ninjaShoebox(ScavTrap& obj){
 	unsigned int	challenge_nb;
 	std::cout << this->_type << " " << this->_name << " encounters " << obj.get_type() << " "<< obj.get_name() << std::endl;
-	// std::cout << "" << std::endl;
 	challenge_nb = obj.challengeNewcomer(this->_name);
 	switch (challenge_nb)
 	{

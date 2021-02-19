@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:33 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 13:12:47 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:05:52 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,32 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap(100, 100, 50, 50, 1, "Unknown", 20, 15, 5, "SC4V-TP"){
 	if (PRINT)
-		std::cout << "SC4V-TP Constructor called. SC4V-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : "<< this->_name << std::endl;
+		std::cout << "SC4V-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : "<< this->_name << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 5, "SC4V-TP"){
 	if (PRINT)
-		std::cout << "SC4V-TP Constructor called. SC4V-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : "<< this->_name << std::endl;
+		std::cout << "SC4V-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : "<< this->_name << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
 	if (PRINT)
-		std::cout << "SC4V-TP Destructor called. SC4V-TP "<< this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " ;//<< std::endl;
+		std::cout << "SC4V-TP Destructor called. "<< this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;
 
 }
 
 ScavTrap::ScavTrap(const ScavTrap& obj)
 {
 	if (PRINT)
-		std::cout << "SC4V-TP Copy Constructor called. SC4V-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "SC4V-TP Copy Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 	*this = obj;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 {
 	if (PRINT)
-		std::cout << "SC4V-TP Frag Assignation Operator called. SC4V-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "SC4V-TP Frag Assignation Operator called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 	ClapTrap::operator=(obj);
 	return *this;
 }
@@ -70,4 +70,22 @@ unsigned int		ScavTrap::challengeNewcomer(std::string const & target){
 	}
 	std::cout << "SC4V-TP " << this->_name << " challenges newcomer : Hello " << target << challenge << std::endl;
 	return challenge_nb;
+}
+
+unsigned int			ScavTrap::rangedAttack(std::string const & target){
+	if (this->_energy_points > 0){
+		std::cout << this->_type << " "<< this->_name << " attacks " << target << " at range, causing " << this->_range_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << this->_type << " "<< this->_name  << " : HEAD SHOT HEHEHEHE !" << std::endl;
+		return (this->_range_attack_damage);
+	}
+	return 0;
+}
+
+unsigned int			ScavTrap::meleeAttack(std::string const & target){
+	if (this->_energy_points >= 0){
+		std::cout << this->_type << " "<< this->_name << " attacks " << target << " in melee, causing " << this->_melee_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << this->_type << " "<< this->_name  << " : THIS IS HOW WE DO IT !" << std::endl;
+		return (this->_melee_attack_damage);
+	}
+	return 0;
 }

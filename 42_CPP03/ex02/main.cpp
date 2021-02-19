@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:54 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 11:40:28 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:26:34 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-#include "NinjaTrap.hpp"
 
 void	fight_simulation(FragTrap *four, FragTrap *five)
 {

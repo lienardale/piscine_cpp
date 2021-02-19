@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:57 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 15:53:53 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:11:01 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ ClapTrap::ClapTrap(void) : _hit_points(100), _max_hit_points(100), _energy_point
 							_level(1), _name("Unknow"), _melee_attack_damage(30), _range_attack_damage(20),
 							_armor_damage_reduction(5), _type("CL4P_TP") {
 	if (PRINT)
-		std::cout << "CL4P-TP Default Constructor called. " << std::endl ;//<< "CL4P-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << ". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement." << std::endl;
+		std::cout << "CL4P-TP Default Constructor called. " << std::endl ;
+	if (this->_type.compare("CL4P-TP") == 0)
+		std::cout << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;//<< "CL4P-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << ". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _hit_points(100), _max_hit_points(100), _energy_points(100), _max_energy_points(100),
@@ -24,6 +26,8 @@ ClapTrap::ClapTrap(std::string name) : _hit_points(100), _max_hit_points(100), _
 							_armor_damage_reduction(5), _type("CL4P_TP") {
 	if (PRINT)
 		std::cout << "CL4P-TP Name Constructor called. " << std::endl ;//<< "CL4P-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << ". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement." << std::endl;
+	if (this->_type.compare("CL4P-TP") == 0)
+		std::cout << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 }
 
 ClapTrap::ClapTrap(int hit_points, int max_hit_points, int energy_points, int max_energy_points, int level, std::string name,
@@ -92,10 +96,10 @@ void	ClapTrap::takeDamage(unsigned int amount){
 
 	armor = (unsigned int)this->_armor_damage_reduction;
 	if (amount == 0 || armor >= amount)
-		std::cout << this->_type << " "<< this->_name << " takes 0 damage points." << std::endl;
+		std::cout << this->_type << " "<< this->_name << " takes 0 damage points. ("<< this->_armor_damage_reduction << " armor reduction)" << std::endl;
 	else
-		std::cout << this->_type << " "<< this->_name << " takes " << amount - this->_armor_damage_reduction << " damage points." << std::endl;
-	if (amount > 0)
+		std::cout << this->_type << " "<< this->_name << " takes " << amount - this->_armor_damage_reduction << " damage points. ("<< this->_armor_damage_reduction << " armor reduction)" << std::endl;
+	if (amount > 0 && armor < amount)
 		this->_hit_points -= amount - this->_armor_damage_reduction;
 	if ( this->_hit_points <= 0 ){
 		this->_hit_points = 0;
