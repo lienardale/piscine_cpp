@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:32 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 14:03:21 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:52:33 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class ScavTrap : public ClapTrap
 			ScavTrap(const ScavTrap&);
 			~ScavTrap();
 			ScavTrap&	operator=(const ScavTrap&);
-			unsigned int		challengeNewcomer(std::string const & target);
+			unsigned int				challengeNewcomer(std::string const & target);
 			virtual unsigned int		rangedAttack(std::string const & target);
 			virtual unsigned int		meleeAttack(std::string const & target);
 };
