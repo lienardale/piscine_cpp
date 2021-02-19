@@ -6,21 +6,21 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:28 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 17:08:24 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:20:31 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(): FragTrap(), NinjaTrap() {
+SuperTrap::SuperTrap(): ClapTrap(), FragTrap(), NinjaTrap() {
 	if (PRINT)
-		std::cout << "5UP3R-TP Default Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "5UP3R-TP Default Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 	this->_type = "5UP3R-TP";
 }
 
 SuperTrap::SuperTrap(std::string name): ClapTrap(name), FragTrap(name), NinjaTrap(name){
 	if (PRINT)
-		std::cout << "5UP3R-TP Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "5UP3R-TP Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 	this->_type = "5UP3R-TP";
 }
 
@@ -32,16 +32,16 @@ SuperTrap::~SuperTrap()
 
 SuperTrap::SuperTrap(const SuperTrap& obj)
 {
-	if (PRINT)
-		std::cout << "5UP3R-TP Copy Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 	*this = obj;
+	if (PRINT)
+		std::cout << "5UP3R-TP Copy Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 }
 
 SuperTrap&	SuperTrap::operator=(const SuperTrap& obj)
 {
-	if (PRINT)
-		std::cout << "Assignation operator called" << std::endl;
 	ClapTrap::operator=(obj);
+	if (PRINT)
+		std::cout << "5UP3R-TP Assignation operator called" << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 	return *this;
 }
 

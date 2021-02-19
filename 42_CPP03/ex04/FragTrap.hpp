@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 15:45:16 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:15:43 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class FragTrap : virtual public ClapTrap
 			FragTrap(const FragTrap&);
 			virtual ~FragTrap();
 			FragTrap&	operator=(const FragTrap&);
-			unsigned int		vaulthunter_dot_exe(std::string const & target);
-			virtual unsigned int		rangedAttack(std::string const & target);
-			virtual unsigned int		meleeAttack(std::string const & target);
+			unsigned int			vaulthunter_dot_exe(std::string const & target);
+			virtual unsigned int	rangedAttack(std::string const & target);
+			virtual unsigned int	meleeAttack(std::string const & target);
 };

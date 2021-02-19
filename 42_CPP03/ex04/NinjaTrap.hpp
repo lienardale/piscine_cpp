@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:13 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 13:59:12 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 20:19:34 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ class NinjaTrap : virtual public ClapTrap
 			NinjaTrap(const NinjaTrap&);
 			virtual ~NinjaTrap();
 			NinjaTrap&	operator=(const NinjaTrap&);
-			unsigned int		ninjaShoebox(ClapTrap& obj);
-			unsigned int		ninjaShoebox(FragTrap& obj);
-			unsigned int		ninjaShoebox(ScavTrap& obj);
-			unsigned int		ninjaShoebox(NinjaTrap& obj);
-			virtual unsigned int		rangedAttack(std::string const & target);
-			virtual unsigned int		meleeAttack(std::string const & target);
+			unsigned int			ninjaShoebox(ClapTrap& obj);
+			unsigned int			ninjaShoebox(FragTrap& obj);
+			unsigned int			ninjaShoebox(ScavTrap& obj);
+			unsigned int			ninjaShoebox(NinjaTrap& obj);
+			virtual unsigned int	rangedAttack(std::string const & target);
+			virtual unsigned int	meleeAttack(std::string const & target);
 };
