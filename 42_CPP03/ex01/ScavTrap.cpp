@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:33 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 19:30:14 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:44:26 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,34 @@ ScavTrap::ScavTrap() : _hit_points(100), _max_hit_points(100), _energy_points(50
 							_level(1), _name("Unknow"), _melee_attack_damage(20), _range_attack_damage(15),
 							_armor_damage_reduction(5){
 	if (PRINT)
-		std::cout << "SC4V-TP Constructor called" << std::endl << "SC4V-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : "<< this->_name << ". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement." << std::endl;
+		std::cout << "SC4V-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : _hit_points(100), _max_hit_points(100), _energy_points(50), _max_energy_points(50),
 							_level(1), _name(name), _melee_attack_damage(20), _range_attack_damage(15),
 							_armor_damage_reduction(5){
 	if (PRINT)
-		std::cout << "SC4V-TP Constructor called" << std::endl << "SC4V-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : "<< this->_name << ". Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement." << std::endl;
+		std::cout << "SC4V-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
 	if (PRINT)
-		std::cout << "SC4V-TP Destructor called" << std::endl << "SC4V-TP "<< this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa." << std::endl;
+		std::cout << "SC4V-TP Destructor called. "<< this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa." << std::endl;
 
 }
 
 ScavTrap::ScavTrap(const ScavTrap& obj)
 {
 	if (PRINT)
-		std::cout << "SC4V-TP Copy Constructor called" << std::endl << "SC4V-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : CL4P-TP. Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement." << std::endl;
+		std::cout << "SC4V-TP Copy Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 	*this = obj;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 {
 	if (PRINT)
-		std::cout << "SC4V-TP Frag Assignation Operator called" << std::endl << "SC4V-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : CL4P-TP. Robot d'Hyperion classe C. Veuillez régler les paramètres d'usine en fonction de vos besoin avant déploiement." << std::endl;
+		std::cout << "SC4V-TP Frag Assignation Operator called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 	this->_hit_points = obj._hit_points;
 	this->_max_hit_points = obj._max_hit_points;
 	this->_energy_points = obj._energy_points;

@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:54 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 19:34:02 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:42:40 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,32 +46,10 @@ void	fight_simulation(FragTrap *four, FragTrap *five)
 
 int main()
 {
-	FragTrap one;
-	FragTrap two("Bob");
-	FragTrap three = two;
-
-	std::string name4 = "THE DESTROYER";
-	std::string name5 = "Puppy";
-	FragTrap four(name4);
-	FragTrap five(name5);
+	FragTrap four("THE DESTROYER");
+	FragTrap five("Puppy");
 
 	srand(time(0));
-	one.meleeAttack("Oponent one");
-	one.rangedAttack("Oponent one");
-	one.takeDamage(50);
-	one.takeDamage(50);
-	one.takeDamage(50);
-	one.beRepaired(500);
-
-	three.vaulthunter_dot_exe("Oponent two");
-	three.vaulthunter_dot_exe("Oponent three");
-	three.vaulthunter_dot_exe("Oponent four");
-	three.vaulthunter_dot_exe("Oponent Oponent");
-	three.vaulthunter_dot_exe("Himself");
-	two.vaulthunter_dot_exe("You");
-	two.vaulthunter_dot_exe("Me");
-
-
 	fight_simulation(&four, &five);
 	std::cout << std::endl;
 
@@ -82,6 +60,7 @@ int main()
 	Linette_Scav0.takeDamage(50);
 	Linette_Scav0.takeDamage(50);
 	Linette_Scav0.beRepaired(500);
+	std::cout << std::endl;
 
 	ScavTrap	Tom_Scav0("Tom_Scav0");
 	Tom_Scav0.challengeNewcomer("Doctor Strange");
