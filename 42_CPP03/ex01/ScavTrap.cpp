@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:33 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/18 12:18:37 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 19:30:14 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	ScavTrap::takeDamage(unsigned int amount){
 		std::cout << "SC4V-TP "<< this->_name << " takes 0 damage points." << std::endl;
 	else
 		std::cout << "SC4V-TP "<< this->_name << " takes " << amount - this->_armor_damage_reduction << " damage points." << std::endl;
-	if (amount > 0)
+	if (amount > 0 && armor < amount)
 		this->_hit_points -= amount - this->_armor_damage_reduction;
 	if ( this->_hit_points <= 0 ){
 		this->_hit_points = 0;
