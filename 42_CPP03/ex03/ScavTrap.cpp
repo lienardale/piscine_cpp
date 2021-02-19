@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:33 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 10:05:43 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 11:21:49 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 }
 
 unsigned int		ScavTrap::challengeNewcomer(std::string const & target){
-	int			challenge_nb = rand() % 5;
-	std::string	challenge;
+	unsigned int	challenge_nb = rand() % 5;
+	std::string		challenge;
 	
 	if (this->_hit_points <= 0)
 		return 0;
@@ -69,5 +69,5 @@ unsigned int		ScavTrap::challengeNewcomer(std::string const & target){
 		break;
 	}
 	std::cout << "SC4V-TP " << this->_name << " challenges newcomer : Hello " << target << challenge << std::endl;
-	return 0;
+	return challenge_nb;
 }

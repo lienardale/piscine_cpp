@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:57 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 10:35:22 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 11:03:08 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,4 +115,8 @@ void		ClapTrap::set_hit_points(int hp){
 
 std::string		ClapTrap::get_name(void){
 	return this->_name;
+}
+
+std::string		ClapTrap::get_type(void){
+	return this->_type;
 }
