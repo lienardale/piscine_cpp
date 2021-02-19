@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 12:14:28 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 11:52:02 by alienard         ###   ########.fr       */
+/*   Created: 2021/02/16 12:13:32 by alienard          #+#    #+#             */
+/*   Updated: 2021/02/19 10:59:29 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <string>
+#include "ClapTrap.hpp"
 
-#ifdef DEBUG
+// #ifdef DEBUG
 # define PRINT 1
-#else
-# define PRINT 0
-#endif
+// #else
+// # define PRINT 0
+// #endif
 
-class SuperTrap
+class ScavTrap : public ClapTrap
 {
 		private:
 
 		public:
-			SuperTrap();
-			SuperTrap(const SuperTrap&);
-			~SuperTrap();
-			SuperTrap&	operator=(const SuperTrap&);
+			ScavTrap();
+			ScavTrap(std::string name);
+			ScavTrap(const ScavTrap&);
+			~ScavTrap();
+			ScavTrap&	operator=(const ScavTrap&);
+			unsigned int		challengeNewcomer(std::string const & target);
 };
