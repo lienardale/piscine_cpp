@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:13 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 11:32:51 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 15:47:28 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,33 @@
 NinjaTrap::NinjaTrap(): ClapTrap(60, 60, 120, 120, 1, "Unknown", 60, 5, 0, "N1NJ4-TP")
 {
 	if (PRINT)
-		std::cout << this->_type << " Constructor called. " << this->_type << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "N1NJ4-TP Default Constructor called. " << this->_type << " " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 
 }
 
 NinjaTrap::NinjaTrap(std::string name): ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0, "N1NJ4-TP")
 {
 	if (PRINT)
-		std::cout << this->_type << " Constructor called. " << this->_type << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "N1NJ4-TP Constructor called. " << this->_type << " " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 }
 
 NinjaTrap::~NinjaTrap()
 {
 	if (PRINT)
-		std::cout << this->_type << " Destructor called. " << this->_type << this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " ;
+		std::cout << "N1NJ4-TP Destructor called. " << this->_type << " " << this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;
 }
 
 NinjaTrap::NinjaTrap(const NinjaTrap& obj)
 {
 	if (PRINT)
-		std::cout << this->_type << " Copy Constructor called. " << this->_type << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "N1NJ4-TP Copy Constructor called. " << this->_type << " " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 	*this = obj;
 }
 
 NinjaTrap&	NinjaTrap::operator=(const NinjaTrap& obj)
 {
 	if (PRINT)
-		std::cout << this->_type << " Assignation Operator called. " << this->_type << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "N1NJ4-TP Assignation Operator called. " << this->_type << " " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 	ClapTrap::operator=(obj);
 	return *this;
 }
@@ -118,4 +118,22 @@ unsigned int		NinjaTrap::ninjaShoebox(NinjaTrap& obj){
 	obj.beRepaired(20);
 	this->beRepaired(20);
 	return (0);
+}
+
+unsigned int			NinjaTrap::rangedAttack(std::string const & target){
+	if (this->_energy_points > 0){
+		std::cout << this->_type << " "<< this->_name << " attacks " << target << " at range, causing " << this->_range_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << this->_type << " "<< this->_name  << " : DOES THIS SHURIKEN TASTE GOOD TO YOU ?!" << std::endl;
+		return (this->_range_attack_damage);
+	}
+	return 0;
+}
+
+unsigned int			NinjaTrap::meleeAttack(std::string const & target){
+	if (this->_energy_points >= 0){
+		std::cout << this->_type << " "<< this->_name << " attacks " << target << " in melee, causing " << this->_melee_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << this->_type << " "<< this->_name  << " : EAT MY BLADE, PEASANT !" << std::endl;
+		return (this->_melee_attack_damage);
+	}
+	return 0;
 }

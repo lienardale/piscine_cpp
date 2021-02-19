@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:33 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 11:21:49 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 14:05:19 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,22 @@ unsigned int		ScavTrap::challengeNewcomer(std::string const & target){
 	}
 	std::cout << "SC4V-TP " << this->_name << " challenges newcomer : Hello " << target << challenge << std::endl;
 	return challenge_nb;
+}
+
+unsigned int			ScavTrap::rangedAttack(std::string const & target){
+	if (this->_energy_points > 0){
+		std::cout << this->_type << " "<< this->_name << " attacks " << target << " at range, causing " << this->_range_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << this->_type << " "<< this->_name  << " : HEAD SHOT HEHEHEHE !" << std::endl;
+		return (this->_range_attack_damage);
+	}
+	return 0;
+}
+
+unsigned int			ScavTrap::meleeAttack(std::string const & target){
+	if (this->_energy_points >= 0){
+		std::cout << this->_type << " "<< this->_name << " attacks " << target << " in melee, causing " << this->_melee_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << this->_type << " "<< this->_name  << " : THIS IS HOW WE DO IT !" << std::endl;
+		return (this->_melee_attack_damage);
+	}
+	return 0;
 }

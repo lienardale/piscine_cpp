@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 10:39:21 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 15:47:19 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(void) : ClapTrap(100, 100, 100, 100, 1, "Unknown", 30, 20, 5, "FR4G-TP") {
 	if (PRINT)
-		std::cout << "FR4G-TP Constructor called. FR4G-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
+		std::cout << "FR4G-TP Default Constructor called. FR4G-TP "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5, "FR4G-TP") {
@@ -25,7 +25,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30,
 FragTrap::~FragTrap()
 {
 	if (PRINT)
-		std::cout << "FR4G-TP Destructor called. FR4G-TP "<< this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " ;// << std::endl;
+		std::cout << "FR4G-TP Destructor called. FR4G-TP "<< this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& obj)
@@ -79,6 +79,24 @@ unsigned int		FragTrap::vaulthunter_dot_exe(std::string const & target){
 		}
 		std::cout << "FR4G-TP " << this->_name << " attacks : " << attack << ", it causes " << dmg << " dmg points to " << target << " (without armor reduction)." << std::endl;
 		return dmg;
+	}
+	return 0;
+}
+
+unsigned int			FragTrap::rangedAttack(std::string const & target){
+	if (this->_energy_points > 0){
+		std::cout << this->_type << " "<< this->_name << " attacks " << target << " at range, causing " << this->_range_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << this->_type << " "<< this->_name  << " : DIDN'T SEE THAT COMING EH ?!" << std::endl;
+		return (this->_range_attack_damage);
+	}
+	return 0;
+}
+
+unsigned int			FragTrap::meleeAttack(std::string const & target){
+	if (this->_energy_points >= 0){
+		std::cout << this->_type << " "<< this->_name << " attacks " << target << " in melee, causing " << this->_melee_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << this->_type << " "<< this->_name  << " : CAPTURE THE FL4444444444G !" << std::endl;
+		return (this->_melee_attack_damage);
 	}
 	return 0;
 }

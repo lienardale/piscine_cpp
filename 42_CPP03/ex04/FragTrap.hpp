@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 10:39:20 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 15:45:16 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 // # define PRINT 0
 // #endif
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 		private:
 
@@ -29,7 +29,9 @@ class FragTrap : public ClapTrap
 			FragTrap(void);
 			FragTrap(std::string name);
 			FragTrap(const FragTrap&);
-			~FragTrap();
+			virtual ~FragTrap();
 			FragTrap&	operator=(const FragTrap&);
 			unsigned int		vaulthunter_dot_exe(std::string const & target);
+			virtual unsigned int		rangedAttack(std::string const & target);
+			virtual unsigned int		meleeAttack(std::string const & target);
 };
