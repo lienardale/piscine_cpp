@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 20:04:03 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 13:57:49 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 FragTrap::FragTrap(void) : ClapTrap(100, 100, 100, 100, 1, "Unknown", 30, 20, 5, "FR4G-TP") {
 	if (PRINT)
-		std::cout << "FR4G-TP Default Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "FR4G-TP Default Constructor called. "<< this->_name << " : Séquence d'initiation terminée." << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5, "FR4G-TP") {
 	if (PRINT)
-		std::cout << "FR4G-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "FR4G-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée." << std::endl;
 }
 
 FragTrap::~FragTrap()
@@ -28,18 +28,18 @@ FragTrap::~FragTrap()
 		std::cout << "FR4G-TP Destructor called. "<< this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& obj)
+FragTrap::FragTrap(const FragTrap& obj) : ClapTrap(obj._hit_points, obj._max_hit_points, obj._energy_points, obj._max_energy_points, obj._level, obj._name, obj._melee_attack_damage, obj._range_attack_damage, obj._armor_damage_reduction, obj._type)
 {
-	*this = obj;
+	// *this = obj;
 	if (PRINT)
-		std::cout << "FR4G-TP Copy Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "FR4G-TP Copy Constructor called. "<< this->_name << " : Séquence d'initiation terminée." << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& obj)
 {
 	ClapTrap::operator=(obj);
 	if (PRINT)
-		std::cout << "FR4G-TP Assignation Operator called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "FR4G-TP Assignation Operator called. "<< this->_name << " : Séquence d'initiation terminée." << std::endl;
 	return *this;
 }
 

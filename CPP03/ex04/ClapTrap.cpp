@@ -6,14 +6,14 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:57 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 20:03:52 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 14:10:14 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _hit_points(100), _max_hit_points(100), _energy_points(100), _max_energy_points(100),
-							_level(1), _name("Unknow"), _melee_attack_damage(30), _range_attack_damage(20),
+ClapTrap::ClapTrap(void) : _hit_points(100), _max_hit_points(100), _energy_points(120), _max_energy_points(120),
+							_level(1), _name("Unknow"), _melee_attack_damage(60), _range_attack_damage(20),
 							_armor_damage_reduction(5), _type("CL4P_TP") {
 	if (PRINT)
 		std::cout << "CL4P-TP Default Constructor called. " << std::endl ;
@@ -21,8 +21,8 @@ ClapTrap::ClapTrap(void) : _hit_points(100), _max_hit_points(100), _energy_point
 		std::cout << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _hit_points(100), _max_hit_points(100), _energy_points(100), _max_energy_points(100),
-							_level(1), _name(name), _melee_attack_damage(30), _range_attack_damage(20),
+ClapTrap::ClapTrap(std::string name) : _hit_points(100), _max_hit_points(100), _energy_points(120), _max_energy_points(120),
+							_level(1), _name(name), _melee_attack_damage(60), _range_attack_damage(20),
 							_armor_damage_reduction(5), _type("CL4P_TP") {
 	if (PRINT)
 		std::cout << "CL4P-TP Name Constructor called. " << std::endl ;
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap(int hit_points, int max_hit_points, int energy_points, int ma
 	if (PRINT)
 		std::cout << "CL4P-TP Constructor called. " << std::endl ;
 	if (this->_type.compare("CL4P-TP") == 0)
-		std::cout << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction. Nom : " << this->_name << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -47,14 +47,15 @@ ClapTrap::~ClapTrap()
 		std::cout << this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;;
 	if (PRINT)
 		std::cout << "CL4P-TP Destructor called. " << std::endl ;
-		
 }
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 {
 	*this = obj;
 	if (PRINT)
-		std::cout << "CL4P-TP Copy Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "CL4P-TP Copy Constructor called. ";
+	if (this->_type.compare("CL4P-TP") == 0)
+		std::cout << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& obj)
@@ -69,7 +70,7 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& obj)
 	this->_range_attack_damage = obj._range_attack_damage;
 	this->_armor_damage_reduction = obj._armor_damage_reduction;
 	if (PRINT)
-		std::cout << "CL4P-TP Assignation Operator called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "CL4P-TP Frag Assignation Operator called. " ;
 	return *this;
 }
 
@@ -124,6 +125,10 @@ int		ClapTrap::get_hit_points(void){
 void		ClapTrap::set_hit_points(int hp){
 	this->_hit_points = hp;
 	return ;
+}
+
+int		ClapTrap::get_energy_points(void){
+	return this->_energy_points;
 }
 
 std::string		ClapTrap::get_name(void){

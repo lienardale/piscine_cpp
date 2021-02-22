@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:57 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 19:55:00 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 10:00:17 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,24 @@ ClapTrap::ClapTrap(int hit_points, int max_hit_points, int energy_points, int ma
 
 ClapTrap::~ClapTrap()
 {
+	if (this->_type.compare("CL4P-TP") == 0)
+		std::cout << this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;;
 	if (PRINT)
 		std::cout << "CL4P-TP Destructor called. " << std::endl ;
-	if (this->_type.compare("CL4P-TP") == 0)
-		std::cout << "			" << this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;;
 		
 }
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 {
-	if (PRINT)
-		std::cout << "CL4P-TP Copy Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 	*this = obj;
+	if (PRINT)
+		std::cout << "CL4P-TP Copy Constructor called. " ;
+	if (this->_type.compare("CL4P-TP") == 0)
+		std::cout << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& obj)
 {
-	if (PRINT)
-		std::cout << "CL4P-TP Frag Assignation Operator called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 	this->_hit_points = obj._hit_points;
 	this->_max_hit_points = obj._max_hit_points;
 	this->_energy_points = obj._energy_points;
@@ -70,6 +70,10 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& obj)
 	this->_melee_attack_damage = obj._melee_attack_damage;
 	this->_range_attack_damage = obj._range_attack_damage;
 	this->_armor_damage_reduction = obj._armor_damage_reduction;
+	if (PRINT)
+		std::cout << "CL4P-TP Frag Assignation Operator called. " ;
+	if (this->_type.compare("CL4P-TP") == 0)
+		std::cout << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
 	return *this;
 }
 

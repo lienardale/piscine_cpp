@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:57 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 19:50:02 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 10:33:58 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ class ClapTrap
 				int _melee_attack_damage, int _range_attack_damage,
 				int _armor_damage_reduction, std::string _type);
 			ClapTrap(const ClapTrap&);
-			~ClapTrap();
+			virtual ~ClapTrap();
 			ClapTrap&	operator=(const ClapTrap&);
-			virtual unsigned int		rangedAttack(std::string const & target);
-			virtual unsigned int		meleeAttack(std::string const & target);
-			void						takeDamage(unsigned int amount);
-			void						beRepaired(unsigned int amount);
-			int							get_hit_points(void);
-			void						set_hit_points(int hp);
-			std::string					get_name(void);
-			std::string					get_type(void);
-			int							get_melee_attack_damage(void);
-			int							get_range_attack_damage(void);
-			int							get_armor_damage_reduction(void);
+			virtual unsigned int	rangedAttack(std::string const & target);
+			virtual unsigned int	meleeAttack(std::string const & target);
+			void					takeDamage(unsigned int amount);
+			void					beRepaired(unsigned int amount);
+			int						get_hit_points(void);
+			void					set_hit_points(int hp);
+			std::string				get_name(void);
+			std::string				get_type(void);
+			int						get_melee_attack_damage(void);
+			int						get_range_attack_damage(void);
+			int						get_armor_damage_reduction(void);
 };

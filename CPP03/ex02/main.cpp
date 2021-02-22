@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:54 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 19:53:01 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 10:10:24 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int main()
 {
 	std::string name4 = "THE DESTROYER";
 	std::string name5 = "Puppy";
-	FragTrap four(name4);
-	FragTrap five(name5);
+	FragTrap four("THE DESTROYER");
+	FragTrap five("Puppy");
 
 	srand(time(0));
 	fight_simulation(&four, &five);

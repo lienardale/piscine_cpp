@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 12:14:13 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 20:19:34 by alienard         ###   ########.fr       */
+/*   Created: 2021/02/16 12:13:32 by alienard          #+#    #+#             */
+/*   Updated: 2021/02/22 10:31:05 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 
 // #ifdef DEBUG
 # define PRINT 1
@@ -23,20 +22,17 @@
 // # define PRINT 0
 // #endif
 
-class NinjaTrap : virtual public ClapTrap
+class ScavTrap : public ClapTrap
 {
 		private:
 
 		public:
-			NinjaTrap();
-			NinjaTrap(std::string name);
-			NinjaTrap(const NinjaTrap&);
-			virtual ~NinjaTrap();
-			NinjaTrap&	operator=(const NinjaTrap&);
-			unsigned int			ninjaShoebox(ClapTrap& obj);
-			unsigned int			ninjaShoebox(FragTrap& obj);
-			unsigned int			ninjaShoebox(ScavTrap& obj);
-			unsigned int			ninjaShoebox(NinjaTrap& obj);
+			ScavTrap();
+			ScavTrap(std::string name);
+			ScavTrap(const ScavTrap&);
+			~ScavTrap();
+			ScavTrap&	operator=(const ScavTrap&);
+			unsigned int			challengeNewcomer(std::string const & target);
 			virtual unsigned int	rangedAttack(std::string const & target);
 			virtual unsigned int	meleeAttack(std::string const & target);
 };

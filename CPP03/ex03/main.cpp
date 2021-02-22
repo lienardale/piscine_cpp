@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:54 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 20:04:22 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/19 11:52:34 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int main()
 	name = "S4SUK3";
 	NinjaTrap NT_1(name);
 	srand(time(0));
-	std::cout << std::endl;
 
 	NT_0.ninjaShoebox(CT);
 	std::cout << std::endl;

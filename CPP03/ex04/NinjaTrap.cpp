@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:13 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 20:05:36 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 13:57:44 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 NinjaTrap::NinjaTrap(): ClapTrap(60, 60, 120, 120, 1, "Unknown", 60, 5, 0, "N1NJ4-TP")
 {
 	if (PRINT)
-		std::cout << "N1NJ4-TP Default Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "N1NJ4-TP Default Constructor called. " << this->_name << " : Séquence d'initiation terminée." << std::endl;
 
 }
 
 NinjaTrap::NinjaTrap(std::string name): ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0, "N1NJ4-TP")
 {
 	if (PRINT)
-		std::cout << "N1NJ4-TP Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "N1NJ4-TP Constructor called. " << this->_name << " : Séquence d'initiation terminée." << std::endl;
 }
 
 NinjaTrap::~NinjaTrap()
@@ -31,18 +31,18 @@ NinjaTrap::~NinjaTrap()
 		std::cout << "N1NJ4-TP Destructor called. " << this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;
 }
 
-NinjaTrap::NinjaTrap(const NinjaTrap& obj)
+NinjaTrap::NinjaTrap(const NinjaTrap& obj) : ClapTrap(obj._hit_points, obj._max_hit_points, obj._energy_points, obj._max_energy_points, obj._level, obj._name, obj._melee_attack_damage, obj._range_attack_damage, obj._armor_damage_reduction, obj._type)
 {
-	*this = obj;
+	// *this = obj;
 	if (PRINT)
-		std::cout << "N1NJ4-TP Copy Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "N1NJ4-TP Copy Constructor called. " << this->_name << " : Séquence d'initiation terminée." << std::endl;
 }
 
 NinjaTrap&	NinjaTrap::operator=(const NinjaTrap& obj)
 {
 	ClapTrap::operator=(obj);
 	if (PRINT)
-		std::cout << "N1NJ4-TP Assignation Operator called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "N1NJ4-TP Assignation Operator called. " << this->_name << " : Séquence d'initiation terminée." << std::endl;
 	return *this;
 }
 
@@ -99,7 +99,6 @@ unsigned int		NinjaTrap::ninjaShoebox(ScavTrap& obj){
 	case 2:
 		std::cout << this->_type << " " << this->_name << " : I like James Blunt." << std::endl;
 		std::cout << obj.get_type() << " "<< obj.get_name() << " hugs " << this->_type << " " << this->_name << std::endl;
-		this->beRepaired(10);
 		break;
 	case 3:
 		std::cout << this->_type << " " << this->_name << " : But, you know, I don't think there is a good or bad situation. If I had to sum up my life with you today, I would say that it was first of all encounters, people who reached out to me, perhaps at a time when I couldn't, when I was alone at home. And it's rather curious to think that chance, encounters forge a destiny... Because when you have a taste for the thing, when you have a taste for the well done, the beautiful gesture, sometimes you don't find the interlocutor in front of you, I would say, the mirror that helps you move forward. So that's not my case, as I was saying there, since I, on the contrary, I could; and I say thank you to life, I say thank you to it, I sing life, I dance life... I am only love! And finally, when many people today say to me: \"But how do you get this humanity? \"Well, I answer them very simply, I tell them that it is this taste for love, this taste that pushed me today to undertake mechanical construction, but tomorrow, who knows, perhaps simply to put myself at the service of the community, to make the gift, the gift of self..." << std::endl;

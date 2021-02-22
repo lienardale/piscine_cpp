@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 19:37:07 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 10:26:14 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@ FragTrap::FragTrap(void) : _hit_points(100), _max_hit_points(100), _energy_point
 							_level(1), _name("Unknow"), _melee_attack_damage(30), _range_attack_damage(20),
 							_armor_damage_reduction(5) {
 	if (PRINT)
-		std::cout << "FR4G-TP Default Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "FR4G-TP Constructor called" << std::endl << "FR4G-TP "<< this->_name << " : Séquence d'initialisation terminée. (poil au pied)" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name): _hit_points(100), _max_hit_points(100), _energy_points(100), _max_energy_points(100),
 							_level(1), _name(name), _melee_attack_damage(30), _range_attack_damage(20),
 							_armor_damage_reduction(5) {
 	if (PRINT)
-		std::cout << "FR4G-TP Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "FR4G-TP Constructor called" << std::endl << "FR4G-TP "<< this->_name << " : Séquence d'initialisation terminée. (poil au pied)" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
 	if (PRINT)
-		std::cout << "FR4G-TP Destructor called. " << this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa." << std::endl;
+		std::cout << "FR4G-TP Destructor called" << std::endl << "FR4G-TP "<< this->_name << " : OK. Merci beaucoup de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. (poil de chat)" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& obj)
 {
 	*this = obj;
 	if (PRINT)
-		std::cout << "FR4G-TP Copy Constructor called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "FR4G-TP Copy Constructor called" << std::endl << "FR4G-TP "<< this->_name << " : Séquence d'initialisation terminée. (poil au pied)" << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& obj)
@@ -51,13 +51,13 @@ FragTrap&	FragTrap::operator=(const FragTrap& obj)
 	this->_range_attack_damage = obj._range_attack_damage;
 	this->_armor_damage_reduction = obj._armor_damage_reduction;
 	if (PRINT)
-		std::cout << "FR4G-TP Assignation Operator called. " << this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "FR4G-TP Assignation Operator called" << std::endl << "FR4G-TP "<< this->_name << " : Séquence d'initialisation terminée. (poil au pied)" << std::endl;
 	return *this;
 }
 
 unsigned int			FragTrap::rangedAttack(std::string const & target){
 	if (this->_energy_points > 0){
-		std::cout << "FR4G-TP "<< this->_name << " attacks " << target << " at range, causing " << this->_range_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << "FR4G-TP "<< this->_name << " attacks " << target << " at range, causing " << this->_range_attack_damage << " points of damage ! (armor reduction not calculated yet) : ED-SHOT" << std::endl;
 		return (this->_range_attack_damage);
 	}
 	return 0;
@@ -65,7 +65,7 @@ unsigned int			FragTrap::rangedAttack(std::string const & target){
 
 unsigned int			FragTrap::meleeAttack(std::string const & target){
 	if (this->_energy_points >= 0){
-		std::cout << "FR4G-TP "<< this->_name << " attacks " << target << " in melee, causing " << this->_melee_attack_damage << " points of damage ! (without armor reduction)" << std::endl;
+		std::cout << "FR4G-TP "<< this->_name << " attacks " << target << " in melee, causing " << this->_melee_attack_damage << " points of damage ! (armor reduction not calculated yet) : YOLO AND YOU DIE SOON LOL" << std::endl;
 		return (this->_melee_attack_damage);
 	}
 	return 0;
@@ -76,21 +76,21 @@ void	FragTrap::takeDamage(unsigned int amount){
 
 	armor = (unsigned int)this->_armor_damage_reduction;
 	if (amount == 0 || armor >= amount)
-		std::cout << "FR4G-TP "<< this->_name << " takes 0 damage points." << std::endl;
+		std::cout << "FR4G-TP "<< this->_name << " takes 0 damage points. (hehe)" << std::endl;
 	else
-		std::cout << "FR4G-TP "<< this->_name << " takes " << amount - this->_armor_damage_reduction << " damage points." << std::endl;
+		std::cout << "FR4G-TP "<< this->_name << " takes " << amount - this->_armor_damage_reduction << " damage points. (outch)" << std::endl;
 	if (amount > 0 && armor < amount)
 		this->_hit_points -= amount - this->_armor_damage_reduction;
 	if ( this->_hit_points <= 0 ){
 		this->_hit_points = 0;
-		std::cout << "FR4G-TP "<< this->_name << " is dead." << std::endl;
+		std::cout << "FR4G-TP "<< this->_name << " is dead. (aaaaarhg)" << std::endl;
 	}
 	else
 		std::cout << "FR4G-TP "<< this->_name << " : " << this->_hit_points << " HP left." << std::endl;
 }
 
 void	FragTrap::beRepaired(unsigned int amount){
-	std::cout << "FR4G-TP "<< this->_name << " is being repaired.";
+	std::cout << "FR4G-TP "<< this->_name << " is being repaired. (yay)";
 	this->_hit_points += amount;
 	if (this->_hit_points > this->_max_hit_points)
 		this->_hit_points = this->_max_hit_points;

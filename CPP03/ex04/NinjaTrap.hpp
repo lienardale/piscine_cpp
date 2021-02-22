@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 20:04:18 by alienard         ###   ########.fr       */
+/*   Created: 2021/02/16 12:14:13 by alienard          #+#    #+#             */
+/*   Updated: 2021/02/22 13:49:04 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <iostream>
 #include <string>
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 // #ifdef DEBUG
 # define PRINT 1
@@ -21,17 +23,20 @@
 // # define PRINT 0
 // #endif
 
-class FragTrap : virtual public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 		private:
 
 		public:
-			FragTrap(void);
-			FragTrap(std::string name);
-			FragTrap(const FragTrap&);
-			virtual ~FragTrap();
-			FragTrap&	operator=(const FragTrap&);
-			unsigned int			vaulthunter_dot_exe(std::string const & target);
-			virtual unsigned int	rangedAttack(std::string const & target);
-			virtual unsigned int	meleeAttack(std::string const & target);
+			NinjaTrap();
+			NinjaTrap(std::string name);
+			NinjaTrap(const NinjaTrap&);
+			virtual ~NinjaTrap();
+			NinjaTrap&	operator=(const NinjaTrap&);
+			unsigned int		ninjaShoebox(ClapTrap& obj);
+			unsigned int		ninjaShoebox(FragTrap& obj);
+			unsigned int		ninjaShoebox(ScavTrap& obj);
+			unsigned int		ninjaShoebox(NinjaTrap& obj);
+			virtual unsigned int		rangedAttack(std::string const & target);
+			virtual unsigned int		meleeAttack(std::string const & target);
 };

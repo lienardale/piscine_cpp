@@ -6,41 +6,41 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:33 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 20:21:39 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 13:58:16 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap(100, 100, 50, 50, 1, "Unknown", 20, 15, 5, "SC4V-TP"){
+ScavTrap::ScavTrap(void) : ClapTrap(100, 100, 50, 50, 1, "Unknown", 20, 15, 3, "SC4V-TP"){
 	if (PRINT)
-		std::cout << "SC4V-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "SC4V-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée." << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 5, "SC4V-TP"){
+ScavTrap::ScavTrap(std::string name) : ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3, "SC4V-TP"){
 	if (PRINT)
-		std::cout << "SC4V-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "SC4V-TP Constructor called. "<< this->_name << " : Séquence d'initiation terminée." << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
 	if (PRINT)
-		std::cout << "SC4V-TP Destructor called. "<< this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa." << std::endl;
+		std::cout << "SC4V-TP Destructor called. "<< this->_name << " : OK. Merci de m'avoir donné une deuxième chance Dieu. C'est vraiment trop sympa. " << std::endl;
 
 }
 
-ScavTrap::ScavTrap(const ScavTrap& obj)
+ScavTrap::ScavTrap(const ScavTrap& obj) : ClapTrap(obj._hit_points, obj._max_hit_points, obj._energy_points, obj._max_energy_points, obj._level, obj._name, obj._melee_attack_damage, obj._range_attack_damage, obj._armor_damage_reduction, obj._type)
 {
-	*this = obj;
+	// *this = obj;
 	if (PRINT)
-		std::cout << "SC4V-TP Copy Constructor called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "SC4V-TP Copy Constructor called. "<< this->_name << " : Séquence d'initiation terminée." << std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& obj)
 {
 	ClapTrap::operator=(obj);
 	if (PRINT)
-		std::cout << "SC4V-TP Assignation Operator called. "<< this->_name << " : Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot multifonction." << std::endl;
+		std::cout << "SC4V-TP Frag Assignation Operator called. "<< this->_name << " : Séquence d'initiation terminée." << std::endl;
 	return *this;
 }
 

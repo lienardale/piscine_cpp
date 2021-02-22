@@ -6,13 +6,14 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/18 10:24:30 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 10:28:12 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 // #ifdef DEBUG
 # define PRINT 1
@@ -38,12 +39,12 @@ class FragTrap
 			FragTrap(const FragTrap&);
 			~FragTrap();
 			FragTrap&	operator=(const FragTrap&);
-			unsigned int		rangedAttack(std::string const & target);
-			unsigned int		meleeAttack(std::string const & target);
-			void	takeDamage(unsigned int amount);
-			void	beRepaired(unsigned int amount);
-			unsigned int		vaulthunter_dot_exe(std::string const & target);
-			int		get_hit_points(void);
-			void	set_hit_points(int hp);
+			unsigned int	rangedAttack(std::string const & target);
+			unsigned int	meleeAttack(std::string const & target);
+			void			takeDamage(unsigned int amount);
+			void			beRepaired(unsigned int amount);
+			unsigned int	vaulthunter_dot_exe(std::string const & target);
+			int				get_hit_points(void);
+			void			set_hit_points(int hp);
 			std::string		get_name(void);
 };

@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:54 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/18 10:22:12 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 10:38:00 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,33 @@
 #include "FragTrap.hpp"
 
 
-void	fight_simulation(FragTrap four, FragTrap five)
+void	fight_simulation(FragTrap *four, FragTrap *five)
 {
 	std::cout << std::endl;
 	std::cout << "WELCOME TO THE FIGHT OF THE CENTURY" << std::endl;
-	std::cout << "To my left : " << four.get_name() << " !" << std::endl;
-	std::cout << "To my right : " << five.get_name() << " !" << std::endl;
+	std::cout << "To my left : " << four->get_name() << " !" << std::endl;
+	std::cout << "To my right : " << five->get_name() << " !" << std::endl;
 	std::cout << "LET THE BATTLE...BEGIN !" << std::endl;
 	std::cout << std::endl;
 
-	FragTrap	winner;
-	while(four.get_hit_points() > 0 && five.get_hit_points() > 0)
+	std::string	winner_name;
+	int			winner_hp;
+	while(four->get_hit_points() > 0 && five->get_hit_points() > 0)
 	{
-		five.takeDamage(four.meleeAttack(five.get_name()));
-		if (five.get_hit_points() > 0)
-			four.takeDamage(five.vaulthunter_dot_exe(four.get_name()));
+		five->takeDamage(four->meleeAttack(five->get_name()));
+		if (five->get_hit_points() > 0)
+			four->takeDamage(five->vaulthunter_dot_exe(four->get_name()));
 		std::cout << std::endl;
 	}
-	if (four.get_hit_points() > 0 )
-		winner = four;
-	else
-		winner = five;
-	std::cout << "FR4G-TP " << winner.get_name() << " won the fight, " << winner.get_hit_points() << " hp left."<< std::endl;
+	if (four->get_hit_points() > 0 ){
+		winner_hp = four->get_hit_points();
+		winner_name = four->get_name();
+	}
+	else{
+		winner_hp = five->get_hit_points();
+		winner_name = five->get_name();
+	}
+	std::cout << "FR4G-TP " << winner_name << " won the fight, " << winner_hp << " hp left."<< std::endl;
 	std::cout << std::endl;
 }
 
@@ -67,7 +72,7 @@ int main()
 	two.vaulthunter_dot_exe("Me");
 
 
-	fight_simulation(four, five);
+	fight_simulation(&four, &five);
 
 	return 0;
 }

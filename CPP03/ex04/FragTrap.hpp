@@ -6,13 +6,14 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:13:04 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/19 19:51:24 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 13:32:02 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "ClapTrap.hpp"
 
 // #ifdef DEBUG
@@ -31,7 +32,7 @@ class FragTrap : virtual public ClapTrap
 			FragTrap(const FragTrap&);
 			virtual ~FragTrap();
 			FragTrap&	operator=(const FragTrap&);
-			unsigned int				vaulthunter_dot_exe(std::string const & target);
+			unsigned int		vaulthunter_dot_exe(std::string const & target);
 			virtual unsigned int		rangedAttack(std::string const & target);
 			virtual unsigned int		meleeAttack(std::string const & target);
 };
