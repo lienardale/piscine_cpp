@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:14:54 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/22 13:14:10 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/22 14:18:11 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 
 int main()
 {
-	// ClapTrap	CT(500, 500, 500, 500, 5, "Relou_en_chef", 100, 100, 20, "CL4P-TP");
-	// FragTrap FT("THE DESTROYER");
-	// ScavTrap ST("T0m_SC4V0");
-	// NinjaTrap NT_0("N4RUT0");
-	// NinjaTrap NT_1("S4SUK3");
+	ClapTrap	CT(500, 500, 500, 500, 5, "Relou_en_chef", 100, 100, 20, "CL4P-TP");
+	FragTrap FT("THE DESTROYER");
+	ScavTrap ST("T0m_SC4V0");
+	NinjaTrap NT_0("N4RUT0");
+	NinjaTrap NT_1("S4SUK3");
 	SuperTrap	SUPER_T0("M4D4R4_UCH1H4");
 	SuperTrap	SUPER_T1;
 	std::cout << std::endl;
@@ -42,25 +42,25 @@ int main()
 	std::cout << "AD -> 5   | " << SUPER_T1.get_armor_damage_reduction() << std::endl;
 	std::cout << std::endl;
 
-	// NT_0.ninjaShoebox(CT);
-	// std::cout << std::endl;
-	// NT_1.ninjaShoebox(FT);
-	// std::cout << std::endl;
-	// NT_0.ninjaShoebox(ST);
-	// std::cout << std::endl;
-	// NT_0.ninjaShoebox(NT_1);
-	// std::cout << std::endl;
+	NT_0.ninjaShoebox(CT);
+	std::cout << std::endl;
+	NT_1.ninjaShoebox(FT);
+	std::cout << std::endl;
+	NT_0.ninjaShoebox(ST);
+	std::cout << std::endl;
+	NT_0.ninjaShoebox(NT_1);
+	std::cout << std::endl;
 
-	// CT.takeDamage(SUPER_T0.rangedAttack(CT.get_name()));
-	// CT.takeDamage(SUPER_T0.meleeAttack(CT.get_name()));
-	// std::cout << std::endl;
-	// CT.takeDamage(SUPER_T0.vaulthunter_dot_exe(CT.get_name()));
-	// std::cout << std::endl;
-	// FT.beRepaired(1000);
-	// ST.beRepaired(1000);
-	// SUPER_T0.ninjaShoebox(FT);
-	// std::cout << std::endl;
-	// SUPER_T0.ninjaShoebox(ST);
-	// std::cout << std::endl;
+	CT.takeDamage(SUPER_T0.rangedAttack(CT.get_name()));
+	CT.takeDamage(SUPER_T0.meleeAttack(CT.get_name()));
+	std::cout << std::endl;
+	CT.takeDamage(SUPER_T0.vaulthunter_dot_exe(CT.get_name()));
+	std::cout << std::endl;
+	FT.beRepaired(1000);
+	ST.beRepaired(1000);
+	SUPER_T0.ninjaShoebox(FT);
+	std::cout << std::endl;
+	SUPER_T0.ninjaShoebox(ST);
+	std::cout << std::endl;
 	return 0;
 }
