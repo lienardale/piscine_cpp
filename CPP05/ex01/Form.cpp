@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 16:16:40 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/25 13:26:26 by alienard         ###   ########.fr       */
+/*   Created: 2021/02/25 11:38:54 by alienard          #+#    #+#             */
+/*   Updated: 2021/02/25 11:38:54 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "Form.hpp"
 
-Brain&	Human::getBrain(void)
+Form::Form()
 {
-	// returning reference to current human's brainso we have the right address
-	Brain& _B_ref = this->_B;
-	return (_B_ref);
+	if (PRINT)
+		std::cout << "Constructor called" << std::endl;
+
 }
 
-std::string	Human::identify(){
-	return (_B.identify());
-};
-
-Human::Human()
+Form::~Form()
 {
-	Brain	_B;
+	if (PRINT)
+		std::cout << "Destructor called" << std::endl;
 
-	(void)_B;
 }
 
-Human::~Human()
+Form::Form(const Form& obj)
 {
+	if (PRINT)
+		std::cout << "Copy Constructor called" << std::endl;
+	*this = obj;
 }
+
+Form&	Form::operator=(const Form& obj)
+{
+	if (PRINT)
+		std::cout << "Assignation operator called" << std::endl;
+	return *this;
+}
+

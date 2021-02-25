@@ -4,6 +4,8 @@ v0_*
 *.o
 *.a
 a.out*
+*/a.out*
+*/*/a.out*
 *.swp
 *.h.swo
 *.swo
