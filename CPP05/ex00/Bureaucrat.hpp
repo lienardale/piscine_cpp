@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:38:27 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/25 12:21:07 by alienard         ###   ########.fr       */
+/*   Updated: 2021/02/26 09:14:17 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 class Bureaucrat
 {
 		private:
-			const std::string	_name;
+			std::string const	_name;
 			int					_grade;
 		public:
 			Bureaucrat();
@@ -48,8 +48,8 @@ class Bureaucrat
 			};
 			std::string const	getName(void) const;
 			int					getGrade(void) const;
-			void				incGrade(Bureaucrat&);
-			void				decGrade(Bureaucrat&);
+			void				incGrade();
+			void				decGrade();
 };
 
 std::ostream &	operator<<(std::ostream& os, const Bureaucrat& src);

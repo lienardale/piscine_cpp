@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:38:28 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/26 09:16:10 by alienard         ###   ########.fr       */
+/*   Updated: 2021/03/01 10:28:59 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,20 @@ void	Bureaucrat::decGrade(){
 	if (this->_grade >= 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade += 1;
+}
+
+void	Bureaucrat::signForm(Form& form){
+	form.beSigned(*this);
+}
+
+void	Bureaucrat::executeForm(Form const & form){
+	try{
+		std::cout << this->_name <<" executes " << form.getName() << std::endl;
+		form.execute(*this);
+	}
+	catch (std::exception & e){
+		std::cerr << "Exception : " << e.what() << std::endl;
+	}
 }
 
 std::ostream &	operator<<(std::ostream& os, const Bureaucrat& src){

@@ -6,20 +6,20 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:38:54 by alienard          #+#    #+#             */
-/*   Updated: 2021/02/26 10:51:16 by alienard         ###   ########.fr       */
+/*   Updated: 2021/03/01 11:04:41 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _name("Defaut Form"), _signed(false), _signGrade(100), _execGrade(75)
+Form::Form() : _name("Defaut Form"), _signed(false), _signGrade(100), _execGrade(75), _target("John_Doe")
 {
 	if (PRINT)
 		std::cout << "Constructor called" << std::endl;
 
 }
 
-Form::Form(std::string name, int sign, int exec) : _name(name), _signed(false), _signGrade(sign), _execGrade(exec){
+Form::Form(std::string name, int sign, int exec, std::string target) : _name(name), _signed(false), _signGrade(sign), _execGrade(exec), _target(target){
 	if (sign < 1 || exec < 1)
 		throw Form::GradeTooHighException();
 	if (sign > 150 || exec > 150)
@@ -64,11 +64,24 @@ int		Form::getexecGrade(void) const{
 	return this->_execGrade;
 }
 
+std::string const	Form::getTarget(void) const{
+	return this->_target;
+}
+
 void	Form::beSigned(Bureaucrat& bob){
 	if (bob.getGrade() > this->_signGrade)
 		throw Form::GradeTooLowException();
 	else
 		this->_signed = true;
+}
+
+void		Form::execute(Bureaucrat const & executor) const{
+	if (this->getStatus() == false)
+		throw Form::FormNotSignedException();
+	else if (executor.getGrade() > this->_execGrade)
+		throw Form::GradeTooLowException();
+	else
+		this->real_exec(executor);
 }
 
 std::ostream &	operator<<(std::ostream& os, const Form& src){
