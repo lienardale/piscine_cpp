@@ -6,7 +6,7 @@
 /*   By: alienard <alienard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 10:05:07 by alienard          #+#    #+#             */
-/*   Updated: 2021/03/03 11:14:54 by alienard         ###   ########.fr       */
+/*   Updated: 2021/03/03 17:03:45 by alienard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <string>
 
 template< typename T >
-void	iter(T * str, size_t len, void (*f)(T &)){
+void	iter(T * str, size_t len, void (*f)(T const &)){
 	if (!str)
 		return ;
-	for (size_t i = 0 ; i < len && str[i] ; i++)
+	for (size_t i = 0 ; i < len ; i++)
 		f(str[i]);
 }
